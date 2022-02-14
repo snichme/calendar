@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="">
+  </head>
+  <body class="h-screen bg-zinc-100 font-mono">
+    <main class="h-screen max-w-screen-xl mx-auto">
+      <div class="mt-2 rounded-2xl border-1 border-gray-100 bg-white">
+        <div class="flex">
+  <div class="flex-none w-14 h-14 ">
+    &lt;&lt;---
+  </div>
+          <h1 class="grow text-center text-5xl tracking-wide">
+          <time>{{cal.month}} {{cal.year}}</time>
+        </h1>
+
+  <div class="flex-none w-14 h-14">
+    --&gt;&gt;
+  </div>
+</div>
+        <div class="grid grid-cols-7 gap-4 invisible">
+          <div>Su</div>
+          <div>Mo</div>
+          <div>Tu</div>
+          <div>We</div>
+          <div>Th</div>
+          <div>Fr</div>
+          <div>Sa</div>
+        </div>
+        <div class="grid grid-cols-7 auto-rows-max">
+          {% for s in cal.iter() %}
+          <div class="h-48 p-2 border-solid border border-gray-100 hover:bg-slate-100">
+            <time datetime="{{ s }}" class="text-xs font-variant-numeric">{{ s.date.day() }}</time>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
