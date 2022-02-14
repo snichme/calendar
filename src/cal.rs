@@ -1,4 +1,4 @@
-use chrono::{Date, Datelike, Local, TimeZone, Weekday};
+use chrono::{Date, Datelike, Local};
 
 const MONTH_NAMES: [&str; 12] = [
     "January",

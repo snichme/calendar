@@ -2,14 +2,13 @@ mod cal;
 use askama::Template;
 use axum::{
     body::{self, Full},
-    extract,
     http::StatusCode,
     response::{Html, IntoResponse, Response},
     routing::get,
     Router,
 };
 use cal::CalView;
-use chrono::{Date, Datelike, Local, TimeZone, Weekday};
+use chrono::Datelike;
 use std::env;
 use std::net::SocketAddr;
 
